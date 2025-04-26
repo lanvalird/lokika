@@ -1,0 +1,15 @@
+@import "../styles/index.css";
+
+body {
+  padding: 1rem;
+  width: 500px;
+}
+
+h1 {
+  margin-bottom:1.5rem;
+  font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}

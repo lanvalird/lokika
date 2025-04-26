@@ -1,0 +1,13 @@
+{
+  "name": "Lokika Homepage",
+  "description": "Pretty startpage for you",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popups/default.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "pages/newtab.html"
+  },
+  "permissions": ["storage"]
+}
