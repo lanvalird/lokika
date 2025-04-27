@@ -47,3 +47,25 @@ form input.parameter {
 form button {
   cursor: pointer;
 }
+
+.repo-link {
+  margin-top: 2rem;
+  border: 0px dashed;
+  border-bottom: 1px dashed;
+}
+
+.repo-link > a {
+  width: 100%;
+  display: inline-block;
+
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-color);
+
+  transition: transform 250ms linear;
+}
+
+.repo-link:hover > a {
+  transform: scale(1.05);
+}
