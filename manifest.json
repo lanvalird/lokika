@@ -9,5 +9,8 @@
   "chrome_url_overrides": {
     "newtab": "pages/newtab.html"
   },
-  "permissions": ["storage"]
+  "permissions": ["search", "storage"],
+  "background": {
+    "service_worker": "scripts/sw.js"
+  }
 }

@@ -1,0 +1,9 @@
+chrome.runtime.onInstalled.addListener((details) => {
+  if (details.reason !== "install" && details.reason !== "update") return;
+  chrome.storage.local.set({
+    searcher: "google",
+  });
+  console.log('Local storage is done.')
+});
+
+chrome.runtime.onStartup.addListener(() => {});
