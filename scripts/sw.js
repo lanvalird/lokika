@@ -3,6 +3,7 @@ chrome.runtime.onInstalled.addListener((details) => {
   chrome.storage.local.set({
     searcher: "google",
     username: "User",
+    background: undefined
   });
   console.log("Local storage is done.");
 });

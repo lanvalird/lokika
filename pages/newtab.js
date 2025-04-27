@@ -20,7 +20,21 @@ form.addEventListener("submit", async (e) => {
     .get(["searcher"])
     .then((r) => r.searcher);
   const value = form["search"].value;
+
+  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+
+  if (urlRegex.exec(value)) return chrome.tabs.create({ url: value });
+
   if (searcher === "system")
     chrome.search.query({ disposition: "NEW_TAB", text: value });
   else search(searcher, value);
+});
+
+window.addEventListener("load", async () => {
+  const body = document.querySelector("body");
+  const background = await chrome.storage.local
+    .get(["background"])
+    .then((r) => r.background);
+
+  body.style.backgroundImage = `url(${background})`;
 });

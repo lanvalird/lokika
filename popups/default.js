@@ -8,6 +8,7 @@ async function getFromStorage(id) {
 
 settings["username"].value = await getFromStorage("username");
 settings["searcher"].value = await getFromStorage("searcher");
+settings["background"].value = await getFromStorage("background") ?? '';
 
 settings.addEventListener(
   "submit",
@@ -16,6 +17,7 @@ settings.addEventListener(
     chrome.storage.local.set({
       username: settings["username"].value,
       searcher: settings["searcher"].value,
+      background: settings["background"].value,
     })
   )
 );
