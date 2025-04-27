@@ -3,13 +3,47 @@
 body {
   padding: 1rem;
   width: 500px;
+  border-radius: 50px;
+  overflow: hidden;
 }
 
 h1 {
-  margin-bottom:1.5rem;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
+h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
 p {
-    font-size: 1rem;
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form label {
+  font-size: 1rem;
+}
+
+.parameter {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-color);
+  border-radius: 999999999px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+form input.parameter {
+  border-radius: 0.25rem;
+}
+
+form button {
+  cursor: pointer;
 }
