@@ -1,6 +1,8 @@
-chrome.runtime.onInstalled.addListener((details) => {
+import browser from "webextension-polyfill";
+
+browser.runtime.onInstalled.addListener((details) => {
   if (details.reason !== "install" && details.reason !== "update") return;
-  chrome.storage.local.set({
+  browser.storage.local.set({
     searcher: "google",
     username: "User",
     background: undefined,
