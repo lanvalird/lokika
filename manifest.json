@@ -1,14 +1,14 @@
 {
-  "name": "Lokika Homepage",
-  "description": "Pretty startpage for you",
-  "version": "1.0",
-  "manifest_version": 3,
-  "homepage_url": "https://github.com/lanvalird/lokika",
-  "chrome_url_overrides": {
-    "newtab": "index.html"
-  },
-  "permissions": ["search", "storage"],
-  "background": {
-    "service_worker": "src/background.ts"
-  }
+	"name": "Lokika Homepage",
+	"description": "Pretty startpage for you",
+	"version": "1.0",
+	"manifest_version": 3,
+	"homepage_url": "https://github.com/lanvalird/lokika",
+	"chrome_url_overrides": {
+		"newtab": "index.html"
+	},
+	"permissions": ["search", "storage"],
+	"background": {
+		"service_worker": "src/background.ts"
+	}
 }
