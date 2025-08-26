@@ -28,10 +28,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-size: cover;
-  background-position: center;
-  backdrop-filter: brightness(0.35);
 }
 
 .heading {
