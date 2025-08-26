@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SearchForm from "../components/search-form.vue";
+import SearchForm from "../components/search-form/index.vue";
 </script>
 
 <template>

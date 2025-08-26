@@ -1,44 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import browser from "webextension-polyfill";
-
-const defaultSearcher = ref("system");
-
-const searchers: { [key: string]: string } = {
-  yandex: `https://yandex.com/search/?text={0}`,
-  google: `https://www.google.com/search?q={0}`,
-  system: "SYSTEM_SEARCH",
-};
-
-const search = async (event: Event) => {
-  try {
-    const query = (event.target as HTMLFormElement).search.value;
-
-    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-
-    if (urlRegex.exec(query)) {
-      return browser.tabs.create({ url: query });
-    }
-
-    const searcher = await getSearcher();
-
-    if (searcher === "system") {
-      browser.search.query(query);
-    }
-
-    await browser.tabs.create({
-      url: searchers[searcher || defaultSearcher.value].replace("{0}", query),
-    });
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-async function getSearcher() {
-  return (await browser.storage.local.get(["searcher"]).then((result) => {
-    return result.searcher;
-  })) as string;
-}
+import { search } from "./logic/search";
 </script>
 
 <template>
