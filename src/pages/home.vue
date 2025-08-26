@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import "@/assets/main.css";
+
 import SearchForm from "../components/search-form/index.vue";
 </script>
 
@@ -28,6 +30,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding: 2rem;
 }
 
 .heading {
