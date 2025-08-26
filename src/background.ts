@@ -3,7 +3,7 @@ import browser from 'webextension-polyfill';
 browser.runtime.onInstalled.addListener((details) => {
   if (details.reason !== 'install' && details.reason !== 'update') return;
   browser.storage.local.set({
-    searcher: 'google',
+    searcher: 'system',
     username: 'User',
     background: undefined,
   });
