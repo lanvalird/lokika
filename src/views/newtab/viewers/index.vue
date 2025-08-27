@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import SearchForm from '@/components/search-form/index.vue';
-import './logic/init.ts';
 </script>
 
 <template>

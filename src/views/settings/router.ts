@@ -10,8 +10,4 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to) => {
-  if (to.path.endsWith('.html')) return { path: '/' };
-});
-
 export default router;
