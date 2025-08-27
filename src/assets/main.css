@@ -1,18 +1,29 @@
-@import "./base.css";
+@import "tailwindcss";
 
-body {
-  display: flex;
-  place-items: center;
-
-  background: var(--background);
-  background-position: center;
-  background-size: cover;
-
+html,
+body,
+:root,
+#app {
+  width: 100%;
   min-width: 500px;
+  height: 100%;
 }
 
 #app {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+}
+
+@layer components {
+  .background {
+    background: var(--color-pink-200);
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .background {
+      background: var(--color-gray-800);
+    }
+  }
 }
