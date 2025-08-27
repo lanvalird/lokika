@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { search } from "./logic/search";
+import { search } from './logic/search';
 </script>
 
 <template>
   <form
-    class="w-full max-w-[500px] flex flex-row justify-center items-center gap-2 text-rose-800 dark:text-rose-400"
+    class="w-full max-w-[500px] flex flex-row justify-center items-center gap-2 text-gray-800 dark:text-gray-200"
     @submit.prevent="search"
   >
     <svg
@@ -23,7 +23,7 @@ import { search } from "./logic/search";
       />
     </svg>
     <input
-      class="w-full border-2 rounded-full p-2"
+      class="w-full border-2 rounded-full p-2 bg-[var(--color-gray-100)] dark:bg-[var(--color-gray-900)] border-[var(--color-primary-700)]"
       type="search"
       name="search"
       placeholder="Search..."

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { browser } from "@/global";
+import { browser } from '@/global';
 
 const { username, background, searcher } = (await browser.storage.local
-  .get(["username", "background", "searcher"])
+  .get(['username', 'background', 'searcher'])
   .then((result) => {
     return result;
   })) as { [key: string]: string };
@@ -23,7 +23,6 @@ function save(e: Event) {
     <label for="set-username">User Name</label>
     <input
       id="set-username"
-      class="parameter"
       type="text"
       name="username"
       :value="username"
@@ -33,18 +32,16 @@ function save(e: Event) {
     <label for="set-background">Background URL</label>
     <input
       id="set-background"
-      class="parameter"
       type="text"
       name="background"
       :value="background"
       placeholder="https://example.com/background.png"
     />
 
-    <img :src="background" class="w-full rounded-lg aspect-squire" alt="background" />
+    <img :src="background || 'https://placehold.co/640x360/transparent/FFF?font=lora'" class="w-full rounded-lg aspect-squire" alt="background" />
 
     <label for="set-searcher">Default Searcher</label>
     <select
-      class="parameter"
       name="searcher"
       id="set-searcher"
       :value="searcher"
@@ -69,33 +66,28 @@ form label {
   font-size: 1rem;
 }
 
-.parameter {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--text-color);
-  border-radius: 999999999px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
 form input {
   width: 100%;
   padding: 0.55rem 1rem;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--color-gray-700);
   border-radius: 999999999px;
-  background-color: var(--color-border);
-  color: var(--color-text);
-
-  &.parameter {
-    border-radius: 0.25rem;
-  }
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-800);
 }
 
 form input::placeholder {
   font-style: italic;
-  color: rgb(250, 250, 220, 0.5);
+  color: var(--color-gray-500);
 }
 
 form button {
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  form input {
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-200);
+  }
 }
 </style>
