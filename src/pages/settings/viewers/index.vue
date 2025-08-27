@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { browser } from '@/global';
-
-function save() {
-  alert('Сохранение настроек в разработке');
-  browser.runtime.openOptionsPage();
-}
+import Form from './form.vue';
 </script>
 
 <template>
@@ -14,34 +9,7 @@ function save() {
     <p id="welcome">Hello, User!</p>
 
     <h2>Settings</h2>
-    <form id="settings" @submit.prevent="save">
-      <label for="set-username">Your First Name</label>
-      <input
-        class="parameter"
-        type="text"
-        name="username"
-        id="set-username"
-        placeholder="User"
-      />
-
-      <label for="set-background">Background URL</label>
-      <input
-        class="parameter"
-        type="text"
-        name="background"
-        id="set-background"
-        placeholder="https://example.com/background.png"
-      />
-
-      <label for="set-searcher">Default Searcher</label>
-      <select class="parameter" name="searcher" id="set-searcher">
-        <option value="system">System (Browser Provider)</option>
-        <option value="google">Google</option>
-        <option value="yandex">Yandex</option>
-      </select>
-
-      <button class="parameter" type="submit">Save</button>
-    </form>
+    <Suspense><Form /></Suspense>
 
     <p class="repo-link">
       <a href="https://github.com/lanvalird/lokika" target="_blank"
@@ -53,6 +21,11 @@ function save() {
 
 <style scoped>
 main {
+  width: 100%;
+  min-width: 400px;
+  max-width: 600px;
+  min-height: 400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -72,40 +45,6 @@ h2 {
 
 p {
   font-size: 1rem;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-form label {
-  font-size: 1rem;
-}
-
-.parameter {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--text-color);
-  border-radius: 999999999px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-form input {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--text-color);
-  border-radius: 999999999px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-
-  &.parameter {
-    border-radius: 0.25rem;
-  }
-}
-
-form button {
-  cursor: pointer;
 }
 
 .repo-link {

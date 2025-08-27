@@ -25,8 +25,6 @@ import { search } from './logic/search';
 
 <style scoped>
 .form {
-  --text-color: rgb(250, 250, 220, 0.5);
-
   max-width: 500px;
   width: 100%;
 
@@ -37,7 +35,7 @@ import { search } from './logic/search';
   align-items: center;
   gap: 1rem;
 
-  color: var(--text-color);
+  color: var(--color-text);
 }
 
 .form input {
