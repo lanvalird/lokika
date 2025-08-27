@@ -5,13 +5,15 @@
   "manifest_version": 3,
   "homepage_url": "https://github.com/lanvalird/lokika",
   "action": {
-    "default_popup": "popups/default.html"
+    "default_popup": "popup.html"
   },
+  "options_page": "settings.html",
   "chrome_url_overrides": {
-    "newtab": "pages/newtab.html"
+    "newtab": "index.html"
   },
   "permissions": ["search", "storage"],
   "background": {
-    "service_worker": "scripts/sw.js"
+    "service_worker": "src/background.ts",
+    "type": "module"
   }
 }

@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@import "./theme.css";
+
+html,
+body,
+:root,
+#app {
+  width: 100%;
+  min-width: 500px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+#app {
+  color: var(--color-gray-800);
+  font-family: var(--font-family);
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-gray-50);
+  background-position: center;
+  background-size: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+  #app {
+    background-color: var(--color-gray-950);
+    color: var(--color-gray-200);
+  }
+}

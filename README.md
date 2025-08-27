@@ -3,3 +3,26 @@
 The extension overwrites the browser's (Google Chrome) home page.
 
 ![Screenshot](./screenshots/image.png)
+
+## [manifest.json](./manifest.json)
+
+```json
+{
+  "name": "Lokika Homepage",
+  "description": "Pretty startpage for you",
+  "version": "1.0",
+  "manifest_version": 3,
+  "homepage_url": "https://github.com/lanvalird/lokika",
+  "action": {
+    "default_popup": "src/pages/popup/index.html"
+  },
+  "options_page": "src/pages/settings/index.html",
+  "chrome_url_overrides": {
+    "newtab": "src/pages/newtab/index.html"
+  },
+  "permissions": ["search", "storage"],
+  "background": {
+    "service_worker": "src/background.ts"
+  }
+}
+```
