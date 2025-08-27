@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router';
-import Index from '@/views/newtab/viewers/index.vue';
-import Settings from '@/views/settings/viewers/index.vue';
+import Index from '@/views/newtab/index.vue';
+import Settings from '@/views/settings/index.vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 export const routes: RouteRecordRaw[] = [

@@ -5,7 +5,7 @@ import router from './router/index.ts';
 
 import '@/assets/main.css';
 
-const currentPath = window.location.pathname;
+let currentPath = window.location.pathname;
 
 if (currentPath !== '/' && currentPath !== '/index.html') {
   const targetPath = currentPath.replace('/', '').replace('.html', '');
