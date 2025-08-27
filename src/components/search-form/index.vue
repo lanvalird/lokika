@@ -5,7 +5,6 @@ import { search } from "./logic/search";
 <template>
   <form
     class="w-full max-w-[500px] flex flex-row justify-center items-center gap-2 text-rose-800 dark:text-rose-400"
-    className="form"
     @submit.prevent="search"
   >
     <svg

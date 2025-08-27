@@ -6,24 +6,28 @@ body,
 #app {
   width: 100%;
   min-width: 500px;
-  height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
 }
 
 #app {
+  color: var(--color-pink-800);
+  font-family: var(--font-family);
+
   display: flex;
   flex-direction: column;
+
+  background: var(--color-pink-200);
+  background-position: center;
+  background-size: cover;
 }
 
-@layer components {
-  .background {
-    background: var(--color-pink-200);
-    background-position: center;
-    background-size: cover;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .background {
-      background: var(--color-gray-800);
-    }
+@media (prefers-color-scheme: dark) {
+  #app {
+    background: var(--color-gray-800);
+    color: var(--color-gray-200);
   }
 }

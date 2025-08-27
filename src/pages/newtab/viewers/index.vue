@@ -4,7 +4,7 @@ import SearchForm from "@/components/search-form/index.vue";
 
 <template>
   <main
-    class="background w-full h-full flex flex-col justify-center items-center gap-5 p-5"
+    class="w-full h-full flex flex-col flex-grow justify-center items-center gap-5 p-5"
   >
     <div
       class="flex flex-row justify-center items-center gap-2 font-bold font-['Courier_New',_Courier,_monospace]"

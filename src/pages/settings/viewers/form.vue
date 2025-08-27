@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { browser } from '@/global';
+import { browser } from "@/global";
 
-const { username, background, searcher } = await browser.storage.local
-  .get(['username', 'background', 'searcher'])
+const { username, background, searcher } = (await browser.storage.local
+  .get(["username", "background", "searcher"])
   .then((result) => {
     return result;
-  });
+  })) as { [key: string]: string };
 
 function save(e: Event) {
   const form = e.target as HTMLFormElement;
@@ -39,6 +39,8 @@ function save(e: Event) {
       :value="background"
       placeholder="https://example.com/background.png"
     />
+
+    <img :src="background" class="w-full rounded-lg aspect-squire" alt="background" />
 
     <label for="set-searcher">Default Searcher</label>
     <select
@@ -96,5 +98,4 @@ form input::placeholder {
 form button {
   cursor: pointer;
 }
-
 </style>

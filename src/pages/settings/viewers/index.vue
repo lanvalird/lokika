@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import Form from './form.vue';
+import Form from "./form.vue";
 </script>
 
 <template>
-  <main>
-    <h1>Lokika Homepage</h1>
+  <main class="w-full max-w-4xl mx-auto p-4">
+    <h1 class="text-3xl text-bold leading-tight mt-4 mb-2">Lokika Homepage</h1>
 
-    <p id="welcome">Hello, User!</p>
-
-    <h2>Settings</h2>
+    <h2 class="text-2xl leading-tight my-2">Settings</h2>
     <Suspense><Form /></Suspense>
 
-    <p class="repo-link">
+    <p class="repo-link text-lg">
       <a href="https://github.com/lanvalird/lokika" target="_blank"
         >Contribute on GitHub</a
       >
@@ -20,33 +18,6 @@ import Form from './form.vue';
 </template>
 
 <style scoped>
-main {
-  width: 100%;
-  min-width: 400px;
-  max-width: 600px;
-  min-height: 400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 1rem;
-}
-
-h1 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-h2 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-}
-
-p {
-  font-size: 1rem;
-}
-
 .repo-link {
   margin-top: 2rem;
   border: 0px dashed;
