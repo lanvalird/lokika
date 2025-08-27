@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import "@/assets/main.css";
-import { browser } from "@/global";
+import { browser } from '@/global';
 
 function save() {
-  alert("Сохранение настроек в разработке");
+  alert('Сохранение настроек в разработке');
   browser.runtime.openOptionsPage();
 }
 </script>

@@ -1,5 +1,5 @@
-import browser from "webextension-polyfill";
+import browser from 'webextension-polyfill';
 
 export { browser };
 
-export * from "./constants";
+export * from './constants';

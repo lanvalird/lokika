@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { search } from "./logic/search";
+import { search } from './logic/search';
 </script>
 
 <template>
