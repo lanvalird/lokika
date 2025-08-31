@@ -10,11 +10,17 @@ const { username, background, searcher } = (await browser.storage.local
 function save(e: Event) {
   const form = e.target as HTMLFormElement;
 
-  const background = URL.createObjectURL(form.background.files[0]);
+  const reader = new FileReader();
+  reader.readAsDataURL(form.background.files[0]);
+  reader.onloadend = function () {
+    reader.result;
+    browser.storage.local.set({
+      background: reader.result,
+    });
+  };
 
   browser.storage.local.set({
     username: form.username.value,
-    background,
     searcher: form.searcher.value,
   });
 }
