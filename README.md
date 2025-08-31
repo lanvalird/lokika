@@ -26,6 +26,4 @@ The extension overwrites the browser's (Google Chrome) home page.
     "type": "module"
   }
 }
-
-}
 ```

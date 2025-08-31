@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { browser } from '@/global';
+import { browser } from "@/global";
 
 const { username, background, searcher } = (await browser.storage.local
-  .get(['username', 'background', 'searcher'])
+  .get(["username", "background", "searcher"])
   .then((result) => {
     return result;
   })) as { [key: string]: string };
@@ -10,9 +10,11 @@ const { username, background, searcher } = (await browser.storage.local
 function save(e: Event) {
   const form = e.target as HTMLFormElement;
 
+  const background = URL.createObjectURL(form.background.files[0]);
+
   browser.storage.local.set({
     username: form.username.value,
-    background: form.background.value,
+    background,
     searcher: form.searcher.value,
   });
 }
@@ -32,20 +34,21 @@ function save(e: Event) {
     <label for="set-background">Background URL</label>
     <input
       id="set-background"
-      type="text"
+      type="file"
       name="background"
-      :value="background"
       placeholder="https://example.com/background.png"
     />
 
-    <img :src="background || 'https://placehold.co/640x360/transparent/FFF?font=lora'" class="w-full rounded-lg aspect-squire" alt="background" />
+    <img
+      :src="
+        background || 'https://placehold.co/640x360/transparent/FFF?font=lora'
+      "
+      class="w-full rounded-lg aspect-squire"
+      alt="background"
+    />
 
     <label for="set-searcher">Default Searcher</label>
-    <select
-      name="searcher"
-      id="set-searcher"
-      :value="searcher"
-    >
+    <select name="searcher" id="set-searcher" :value="searcher">
       <option value="system">System (Browser Provider)</option>
       <option value="google">Google</option>
       <option value="yandex">Yandex</option>
