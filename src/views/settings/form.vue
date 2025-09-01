@@ -1,23 +1,34 @@
 <script setup lang="ts">
-import { browser } from "@/global";
+import { browser } from '@/global';
+import { ref } from 'vue';
 
-const { username, background, searcher } = (await browser.storage.local
-  .get(["username", "background", "searcher"])
-  .then((result) => {
-    return result;
-  })) as { [key: string]: string };
+const username = ref('...');
+const background = ref<string | undefined>(undefined);
+const searcher = ref('system');
+
+(await browser.storage.local.get(['username', 'background', 'searcher']).then((result) => {
+  username.value = (result.username as string) || 'user';
+  background.value = (result.background as string) || undefined;
+  if (typeof result.searcher === 'string') searcher.value = result.searcher;
+})) as { [key: string]: string };
 
 function save(e: Event) {
   const form = e.target as HTMLFormElement;
 
-  const reader = new FileReader();
-  reader.readAsDataURL(form.background.files[0]);
-  reader.onloadend = function () {
-    reader.result;
-    browser.storage.local.set({
-      background: reader.result,
-    });
-  };
+  if (form.background.files[0] !== undefined) {
+    const reader = new FileReader();
+    reader.readAsDataURL(form.background.files[0]);
+    reader.onloadend = function () {
+      reader.result;
+      background.value = (reader.result as string) || undefined;
+      browser.storage.local.set({
+        background: reader.result,
+      });
+    };
+  }
+
+  username.value = form.username.value || 'user';
+  searcher.value = form.searcher.value || 'system';
 
   browser.storage.local.set({
     username: form.username.value,
