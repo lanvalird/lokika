@@ -5,11 +5,11 @@
   "manifest_version": 3,
   "homepage_url": "https://github.com/lanvalird/lokika",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "static/settings.html"
   },
-  "options_page": "settings.html",
+  "options_page": "static/settings.html",
   "chrome_url_overrides": {
-    "newtab": "index.html"
+    "newtab": "static/newtab.html"
   },
   "permissions": ["search", "storage", "file://*/*"],
   "background": {
