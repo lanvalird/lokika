@@ -8,3 +8,9 @@ export async function setPageBackground(querySelector: string) {
     }
   });
 }
+
+export async function getStorageData<T>(key: string): Promise<T> {
+  const storage = browser.storage.local;
+  const value = storage.get(key);
+  return value.then(result => result[key]) as T;
+}

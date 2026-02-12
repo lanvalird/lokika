@@ -1,5 +1,5 @@
 import { browser, DEFAULT_SEARCHER } from '@/global';
-import { getSearcher } from './get-searcher';
+import { getStorageData } from '@/global/lib/utils';
 
 const searchers: { [key: string]: string } = {
   yandex: `https://yandex.com/search/?text={0}`,
@@ -17,7 +17,7 @@ export async function search(event: Event) {
       return browser.tabs.create({ url: query });
     }
 
-    const searcher = await getSearcher();
+    const searcher = await getStorageData<string>('searcher');
 
     if (searcher === 'system') {
       return await browser.search.query({ text: query });
