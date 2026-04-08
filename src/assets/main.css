@@ -16,20 +16,13 @@ body,
 }
 
 #app {
-  color: var(--color-gray-800);
-  font-family: var(--font-family);
+  color: var(--text-color);
+  font-family: var(--text-sans);
 
   display: flex;
   flex-direction: column;
 
-  background-color: var(--color-gray-50);
+  background-color: var(--background);
   background-position: center;
   background-size: cover;
-}
-
-@media (prefers-color-scheme: dark) {
-  #app {
-    background-color: var(--color-gray-950);
-    color: var(--color-gray-200);
-  }
 }

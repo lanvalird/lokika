@@ -34,4 +34,16 @@
   --color-secondary-800: #6b21a8;
   --color-secondary-900: #581c87;
   --color-secondary-950: #3c1d70;
+
+  --text-color: var(--color-gray-800);
+  --text-family: var(--font-family);
+
+  --background: var(--color-gray-50);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: var(--color-gray-200);
+    --background: var(--color-gray-950);
+  }
 }
